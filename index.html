@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>作业</title>
+		<link href="css/style.css" rel="stylesheet"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	    <script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body>
+	<!--顶部部分-->
+	<div class="top wrap">
+	<!--顶部左侧部分-->
+		<div class="topLeft">
+		<ul>
+			<li><a href="#" class="loginLink">亲，请登录</a></li>
+			<li><a href="#" class="regeLink">免费注册</a></li>
+			<li><a href="#">手机逛慕淘</a></li>
+		</ul>	
+		</div>
+    <!--顶部右侧部分-->
+		<div class="topRight">
+		<ul>
+			<li>
+				<a href="#" class="own">我的慕淘
+					<span><img src="icon/21.png"></span>
+				</a>
+				<div class="top-content">
+					<a href="#">已买到的宝贝</a>
+					<a href="#">我的足迹</a>
+				<div>
+			</li>
+			<li>
+				
+				<a href="#" class="own">收藏夹
+					<span><img src="icon/21.png"></span>
+				</a>
+				<div class="top-content">
+					<a href="#">收藏的宝贝</a>
+					<a href="#">收藏的店铺</a>
+				<div>
+				
+			</li>
+			<li>
+				<a href="#" class="own">商品分类</a>
+			</li>
+			<li>
+				
+				<a href="#" class="own">卖家中心
+				<span><img src="icon/21.png"></span>
+				</a>
+				<div class="top-content">
+					<a href="#">已卖出的宝贝</a>
+					<a href="#">已出售的宝贝</a>
+				<div>
+				
+			</li>
+			<li>
+			    
+				<a href="#" class="own">联系客服
+				<span><img src="icon/21.png"></span>
+				</a>
+				<div class="top-content">
+					<a href="#">消费者客服</a>
+					<a href="#">卖家客服</a>
+				<div>
+				
+			</li>
+		</ul>		
+		</div>
+	</div>
+	
+<!--登录页-->
+	<!--弹出层遮罩-->
+	 <div class="layer-mask" id="layer-mask">
+	  </div>
+	 <!--弹出层窗体-->
+	 <div class="layer-pop" id="layer-pop">
+	 	<!--弹出层关闭按钮-->
+	 	<div class="layer-close" id="layer-close">
+	 		<img src="icon/20.png"/>
+	 	</div>
+	 	<!--弹出层内容区域-->
+	 	<div class="layer-content" id="layer-content"></div>
+	 </div>
+
+    <!--登录窗体-->
+    <div id="loginHtml" style="display:none">
+    	<div class="login">
+    	  <h4 class="title">登录</h4>
+    	 	 <div class="item">
+    	     <input id="username" class="input" name="username" type="text" placeholder="请输入登录邮箱或手机号"/>
+    	     <p class="error-msg"></p>
+    	     </div>
+    	    <div class="item">
+    	     <input id="password"  class="input" name="password" type="password" placeholder="6-16位密码，区分大小写，不能用空格"/>
+    	     <p class="error-msg"></p>
+    	    </div>
+    	    
+    	    <div class="i-autolog">
+    	    	<div class="autolog">
+    	        <input type="checkbox" name="autolog"/>下次自动登录
+    	        </div>
+    	        <div class="forgetpas">
+    	        	<a href="">忘记密码</a>
+    	        </div>
+    	    </div>
+    	    <button class="i-button">登录</button>
+    	    
+    	    <div class="pics">
+    	    	<img src="icon/xinlang.png" class="pic"/>
+    	    	<img src="icon/weixin.png" class="pic"/>
+    	    	<img src="icon/QQ.png" class="pic"/>
+    	    </div>
+    </div>
+    </div>
+    
+    <!--注册窗体-->
+    <div id="regeHtml" style="display:none">
+    	<div class="login">
+    	    <h4 class="title">注册</h4>
+    	 	   <div class="item">
+    	     <input id="username" class="input" name="username" type="text" placeholder="请输入登录邮箱或手机号"/>
+    	     <p class="error-msg"></p>
+    	    </div>
+    	    <div class="i-identify">
+    	    	<div class="identify-contain">
+    	        <input type="text" name="identify" class="identify" placeholder="请输入验证码" />
+    	        <p class="error-msg"></p>
+    	        </div>
+    	        <div class="identify-pic">
+    	        	<img src="img/verify.png"/>
+    	        </div>
+    	    </div>
+    	    <button class="i-button">登录</button>
+    	    <div class="pics">
+    	    	<img src="icon/xinlang.png" class="pic"/>
+    	    	<img src="icon/weixin.png" class="pic"/>
+    	    	<img src="icon/QQ.png" class="pic"/>
+    	    </div>
+    </div>
+    </div>
+    
+ <!--logo区-->
+ <div class="i-logo wrap">
+ 	<div class="logo">
+ 		<img src="img/logo.png"/>
+ 	</div>
+ 	
+ 	<!--购物车-->
+ 	<div class="shoppingCar" id="shoppingCar">
+ 		<a href="#" >&nbsp;&nbsp;<img src="icon/26.png" class="">&nbsp;&nbsp;购物车&nbsp;&nbsp;<span style="color:white">|</span>&nbsp;&nbsp;<span style="color:white">0</span>&nbsp;&nbsp;<img src="icon/23.png"> 
+ 		</a>
+ 		<div class="">
+ 			
+ 		</div>
+ 	</div>
+ 	
+ 	<!--搜索框-->
+ 	<div class="search">
+ 		<input type="text" name="search" placeholder="灵魂美食一元抢">
+ 		<span>搜索</span>
+ 	</div>
+ 	</div>
+ 	
+ <!--导航条-->
+   <div class="nav">
+   	<ul>
+   		<li><a href="#">数码城</a></li>
+   		<li><a href="#">天黑黑</a></li>
+   		<li><a href="#">团购</a></li>
+   		<li><a href="#">发现</a></li>
+   		<li><a href="#">二手特价</a></li>
+   		<li><a href="#">名品汇</a></li>
+   	</ul>
+   	</div>	
+  
+  <!--banner区-->
+  <div class="main wrap">
+  	<div class="menu-box">
+		</div>
+
+  	<!--菜单-->
+  	<div class="menu-content" id="menu-content">
+  		<div class="i-title">
+  		<img src="icon/18.png">&nbsp;&nbsp;<span style="color:white;font-size:18px">商品分类</span>
+  		</div>
+  		<div class="menu-item">
+  			<a href="">
+  				<span>家用电器</span>
+  			</a>
+  			</div>
+  		<div class="menu-item">
+  			<a href="">
+  				<span>手机、运行商、数码</span>
+  			</a>
+  		</div>
+  		<div class="menu-item">
+  			<a href="">
+  				<span>电脑、办公</span>
+  			</a>
+  		</div>
+  		<div class="menu-item">
+  			<a href="">
+  				<span>家具、家装</span>
+  			</a>
+  		</div>
+  		<div class="menu-item">
+  			<a href="">
+  				<span>男装、女装</span>
+  			</a>
+  		</div>
+  		</div>
+  		
+  		
+  		 <!--内容-->
+		<div class="sub-menu hide" id="sub-menu">
+			<div class="inner-box">
+				<div class="sub-inner-box">
+					<div class="title">手机、配件</div>
+					<div class="sub-row">
+						<span class="bold mr10">手机通讯：</span>
+						<a href="">手机</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">手机维修</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">以旧换新</a>
+					</div>
+					<div class="sub-row">
+						<span class="bold mr10">手机配件：</span>
+						<a href="">手机壳</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">手机存储卡</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">数据线</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">充电器</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">电池</a>
+					</div>
+					<div class="sub-row">
+						<span class="bold mr10">运营商：</span>
+						<a href="">中国联通</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">中国移动</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">中国电信</a>
+					</div>
+					<div class="sub-row">
+						<span class="bold mr10">智能设备：</span>
+						<a href="">智能手环</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">智能家居</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">智能手表</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">其他配件</a>
+					</div>
+					<div class="sub-row">
+						<span class="bold mr10">娱乐：</span>
+						<a href="">耳机</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">音响</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">收音机</a>
+						<span class="ml10 mr10">/</span>
+						<a href="">麦克风</a>
+					</div>
+				</div>
+			</div>
+			<div class="inner-box">
+				<div class="sub-inner-box">
+					<div class="title">家用电器</div>
+					<div class="sub-row">
+                       <span class="bold mr10">电视：</span>
+                       <a href="">国产品牌</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">韩国品牌</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">欧美品牌</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">空调：</span>
+                       <a href="">显示器</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">柜式</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">中央</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">壁挂式</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">冰箱：</span>
+                       <a href="">多门</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">对开门</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">三门</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">双门</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">洗衣机：</span>
+                       <a href="">滚筒式洗衣机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">迷你洗衣机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">洗烘一体机</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">厨房电器：</span>
+                       <a href="">油烟机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">洗碗机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">燃气灶</a>
+					</div>
+				</div>
+			</div>
+	            <div class="inner-box">
+				<div class="sub-inner-box">
+					<div class="title">电脑</div>
+					<div class="sub-row">
+                       <span class="bold mr10">电脑：</span>
+                       <a href="">笔记本</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">平板</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">一体机</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">电脑配件：</span>
+                       <a href="">显示器</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">CPU</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">主板</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">硬盘</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">电源</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">显卡</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">其他配件</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">游戏设备：</span>
+                       <a href="">游戏机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">耳机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">游戏软件</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">网络产品：</span>
+                       <a href="">路由器</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">网络机顶盒</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">交换机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">存储卡</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">网卡</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">外部产品：</span>
+                       <a href="">鼠标</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">键盘</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">U盘</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">移动硬盘</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">鼠标垫</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">电脑清洁</a>
+					</div>
+				</div>
+			</div>
+			<div class="inner-box">
+				<div class="sub-inner-box">
+					<div class="title">家用电器</div>
+					<div class="sub-row">
+                       <span class="bold mr10">电视：</span>
+                       <a href="">国产品牌</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">韩国品牌</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">欧美品牌</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">空调：</span>
+                       <a href="">显示器</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">柜式</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">中央</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">壁挂式</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">冰箱：</span>
+                       <a href="">多门</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">对开门</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">三门</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">双门</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">洗衣机：</span>
+                       <a href="">滚筒式洗衣机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">迷你洗衣机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">洗烘一体机</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">厨房电器：</span>
+                       <a href="">油烟机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">洗碗机</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">燃气灶</a>
+					</div>
+				</div>
+			</div>
+			<div class="inner-box">
+				<div class="sub-inner-box">
+					<div class="title">家具</div>
+					<div class="sub-row">
+                       <span class="bold mr10">家纺：</span>
+                       <a href="">被子</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">枕头</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">四件套</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">床垫</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">灯具：</span>
+                       <a href="">台灯</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">顶灯</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">节能灯</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">应急灯</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">厨具：</span>
+                       <a href="">烹饪锅具</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">餐具</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">菜板刀具</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">家装：</span>
+                       <a href="">地毯</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">沙发垫套</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">装饰字画</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">照片墙</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">窗帘</a>
+					</div>
+					<div class="sub-row">
+                       <span class="bold mr10">生活日用：</span>
+                       <a href="">收纳用品</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">浴室用品</a>
+                       <span class="ml10 mr10">/</span>
+                       <a href="">雨伞雨衣</a>
+					</div>
+				</div>
+			</div>
+			</div>
+		
+		
+
+  
+  
+  <!--轮播图区-->
+  <div class="banner" id="banner">
+     <a href="#" >
+     	<div class="banner-slide slide1 slide-active"></div>
+     </a>
+     <a href="#" >
+     	<div class="banner-slide slide2 "></div>
+     </a>
+     <a href="#" >
+     	<div class="banner-slide slide3"></div>
+     </a>
+     <a href="#" >
+     	<div class="banner-slide slide4"></div>
+     </a>
+     <a href="#" >
+     	<div class="banner-slide slide5"></div>
+     </a>
+    <a href="#" >
+     	<div class="banner-slide slide6"></div>
+     </a>
+   <a href="javascript:void(0)" class="button prev" id="prev"></a>
+   <a href="javascript:void(0)" class="button next" id="next"></a>
+   <div class="dots" id="dots">
+   	 <span class="active"></span>
+   	 <span></span>
+   	 <span></span>
+   	 <span></span>
+   	 <span></span>
+   	 <span></span>
+   	</div>
+   	</div>
+   	</div>
+   	
+   	<!--生活服务区-->
+   	<div class="i-service">
+   		<!--慕快报-->
+   		<div class="newspaper">
+   			<div class="mukuaibao"><span style="color:red;font-size:18px">慕快报</span>
+   				<span style="font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多</span></div>
+   		 <ul>
+   		 	<li><a href="#">[特惠]&nbsp;&nbsp;&nbsp;&nbsp;精选图书大放送</a></li>
+   		 	<li><a href="#">[公告]&nbsp;&nbsp;&nbsp;&nbsp;广州图书大甩卖</a></li>
+   		 	<li><a href="#">[特惠]&nbsp;&nbsp;&nbsp;&nbsp;爆款手机要要要</a></li>
+   		 	<li><a href="#">[公告]&nbsp;&nbsp;&nbsp;&nbsp;台风影响啊啊</a></li>
+   		 	<li><a href="#">[特惠]&nbsp;&nbsp;&nbsp;&nbsp;大闸蟹吃吃吃</a></li>
+   		 </ul>
+   		 </div>
+   	
+   	<!--图标区-->
+   	<div class="picture">
+   		<dl >
+   			<dt><img src="icon/1.png"/></dt>
+   			<dd>话费</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/2.png"/></dt>
+   			<dd>机票</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/3.png"/></dt>
+   			<dd>电影票</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/4.png"/></dt>
+   			<dd>游戏</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/5.png"/></dt>
+   			<dd>彩票</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/6.png"/></dt>
+   			<dd>加油卡</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/7.png"/></dt>
+   			<dd>酒店</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/8.png"/></dt>
+   			<dd>火车票</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/9.png"/></dt>
+   			<dd>众筹</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/10.png"/></dt>
+   			<dd>理财</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/11.png"/></dt>
+   			<dd>礼品卡</dd>
+   		</dl>
+   		<dl>
+   			<dt><img src="icon/12.png"/></dt>
+   			<dd>白条</dd>
+   		</dl>
+   	</div>
+   	<!--小图片-->
+   	<div class="i-pic">
+   		<img src="img/ad.png"/>
+   		</div>
+   </div>
+   		
+<!--楼层区-->
+  <div class="wrap">
+   <!--1楼-->
+   <div class="onefloor" id="div1">
+     <div class="onefloorleft">
+     	<div>1F</div>
+     	<div>服装鞋包</div>
+     </div>
+     <div class="onefloorright">
+     	<div class="tip">
+     	<div class="tip1">大牌&nbsp | &nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div class="tip2">男装 &nbsp |&nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div class="tip3">女装</div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     </div>
+     </div>
+     <div class="hr"></div>
+    <!--服装-->
+     <div class="ongeflooradbox">
+     <div class="onefloorad brand">
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥479元</dd>
+     	</dl>
+         <dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	 <dl>
+     	<dt><img src="floor/1.jpg"/></dt>
+     	<dd>T恤</dd>
+     	<dd>￥190元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.jpg"/></dt>
+     	<dd>T恤</dd>
+     	<dd>￥200元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/2.jpg"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/2.jpg"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl><dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl><dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl><dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	</div>
+     	<div class="manCloth" style="display:none">
+     		<dl>
+     			<dt><img src="floor/6.jpg"></dt>
+     			<dd>匡威短袖</dd>
+     			<dd>￥120元</dd>
+     		</dl>
+     		<dl>
+     			<dt><img src="floor/5.jpg"></dt>
+     			<dd>匡威外套</dd>
+     			<dd>￥320元</dd>
+     		</dl>
+     		<dl>
+     			<dt><img src="floor/1.png"></dt>
+     			<dd>匡威外套</dd>
+     			<dd>￥520元</dd>
+     		</dl>
+     		</div>
+     		<div class="femaleCloth" style="display:none">
+     			<dl>
+     			<dt><img src="floor/2.jpg"></dt>
+     			<dd>裙子</dd>
+     			<dd>￥120元</dd>
+     		</dl>
+     		<dl>
+     			<dt><img src="floor/3.jpg"></dt>
+     			<dd>匡威外套</dd>
+     			<dd>￥320元</dd>
+     		</dl>
+     		<dl>
+     			<dt><img src="floor/4.jpg"></dt>
+     			<dd>裙子</dd>
+     			<dd>￥520元</dd>
+     		</dl>
+     		</div>
+     		
+     	 </div>
+     	 <!--二楼-->
+     	  <div class="onefloor" id="div2">
+     <div class="onefloorleft">
+     	<div>2F</div>
+     	<div>个护美妆</div>
+     </div>
+     <div class="onefloorright">
+        <div class="tip">
+     	<div >热门&nbsp | &nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>国际大牌 &nbsp |&nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>国际名品</div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     </div>
+     </div>
+     <div class="hr"></div>
+     <div class="ongeflooradbox">
+     <div class="onefloorad">
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥479元</dd>
+     	</dl>
+         <dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	 <dl>
+     	<dt><img src="floor/1.jpg"/></dt>
+     	<dd>T恤</dd>
+     	<dd>￥190元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.jpg"/></dt>
+     	<dd>T恤</dd>
+     	<dd>￥200元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/2.jpg"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/2.jpg"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl><dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl><dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl><dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/1.png"/></dt>
+     	<dd>匡威男棒球开衫外套</dd>
+     	<dd>￥590元</dd>
+     	</dl>
+     	</div>
+     	 </div>
+   <!--3楼-->
+   	 <div class="onefloor" id="div3">
+     <div class="onefloorleft">
+     	<div>3F</div>
+     	<div>手机通讯</div>
+     </div>
+     <div class="onefloorright">
+     	<div class="tip">
+     	<div >热门&nbsp | &nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>品质优选 &nbsp |&nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>新机尝鲜</div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     </div>
+     </div>
+     <div class="hr"></div>
+      <div class="ongeflooradbox">
+     <div class="onefloorad">
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/7.jpg"/></dt>
+     	<dd>小米5</dd>
+     	<dd>￥1999元</dd>
+     	</dl>
+     	 </div>
+   	 </div>
+   	 <!--4楼-->
+   	  <div class="onefloor" id="div4">
+     <div class="onefloorleft">
+     	<div>4F</div>
+     	<div>家用电器</div>
+     </div>
+     <div class="onefloorright">
+     	<div class="tip">
+     	<div >热门&nbsp | &nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>大电器 &nbsp |&nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>家用电器</div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     </div>
+     </div>
+     <div class="hr"></div>
+     <div class="ongeflooradbox">
+     <div class="onefloorad">
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/8.jpg"/></dt>
+     	<dd>长虹</dd>
+     	<dd>￥6999元</dd>
+     	</dl>
+     	</div>
+        </div>
+         <!--5楼-->
+   	 <div class="onefloor" id="div5">
+     <div class="onefloorleft">
+     	<div>5F</div>
+     	<div>电脑数码</div>
+     </div>
+     <div class="onefloorright">
+     	<div class="tip">
+     	<div >热门&nbsp | &nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>电脑平板 &nbsp |&nbsp </div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     	<div class="tip">
+     	<div>潮流影音</div>
+     	<span><img src="img/floor-arrow.png"/></span>
+     	</div>
+     </div>
+     </div>
+     <div class="hr"></div>
+     <div class="ongeflooradbox">
+     <div class="onefloorad">
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	<dl>
+     	<dt><img src="floor/9.jpg"/></dt>
+     	<dd>电脑</dd>
+     	<dd>￥4390元</dd>
+     	</dl>
+     	</div>
+        </div>
+        
+      </div>
+      
+ <!--楼层导航区-->
+    <div class="floorscrol">
+     <div class="floor">
+	  <a class="num" href="#div1" >1F</a>
+      <a class="word" href="#div1" >服装</a>
+     </div>
+     <div class="floor">
+	     <a class="num" href="#div2" >2F</a>
+         <a class="word" href="#div2" >个护美妆</a>
+     </div>		
+     <div class="floor">
+	      <a class="num" href="#div3" >3F</a>
+          <a class="word" href="#div3" >手机通讯</a>
+      </div>
+	<div class="floor">
+	      <a class="num" href="#div4" >4F</a>
+          <a class="word" href="#div4" >家用电器</a>
+     </div>
+     <div class="floor">
+	     <a class="num" href="#div5" >5F</a>
+         <a class="word" href="#div5" >电脑数码</a>
+     </div>
+</div>
+
+<!--友情链接区-->
+<div class="link wrap">
+	<div class="link-content">
+		<h3>消费者保障</h3>
+		<a href="#">
+			<span>保障范围</span>
+			<span>退货退款流程</span>
+			<span>服务中心</span>
+			<span>更多特色服务</span>
+		</a>
+	</div>
+	<div class="link-content">
+		<h3>付款方式</h3>
+		<a href="#">
+			<span>快捷支付</span>
+			<span>信用卡</span>
+			<span>余额包</span>
+			<span>蜜蜂花啊</span>
+			<span>货到付款</span>
+		</a>
+	</div>
+	<div class="link-content">
+		<h3>新手上路</h3>
+		<a href="#">
+			<span>新手专区</span>
+			<span>消费警示</span>
+			<span>交易安全</span>
+			<span>24小时在线帮助</span>
+		</a>
+	</div>	
+	<div class="link-content">
+		<h3>慕淘特色</h3>
+		<a href="#">
+			<span>手机慕淘</span>
+			<span>慕淘信</span>
+			<span>大众评审</span>
+			<span>B格指南</span>
+		</a>
+	</div>
+</div>
+
+<!--页脚区-->
+<div class="footer">
+	<div class="foot">
+	<ul>
+	<li><a href="#">关于慕淘</a></li>	
+	<li><a href="#">合作伙伴</a></li>	
+	<li><a href="#">营销中心</a></li>	
+	<li><a href="#">廉政举报</a></li>	
+	<li><a href="#">联系客服</a></li>	
+	<li><a href="#">开放平台</a></li>	
+	<li><a href="#">诚征英才</a></li>	
+	<li><a href="#">联系我们</a></li>	
+	<li><a href="#">网站地图</a></li>	
+	<li><a href="#">法律声明</a></li>	
+	<li><a href="#">知识产权</a></li>	
+    </ul>
+	</div>
+	<div class="banquan">&copy;2016 imooc.com All Rights Reserved</div>
+</div>
+
+<!--右侧导航-->
+  <div id="J_GotoTop" class="elevator">
+    <a href="#" class="elevator-msg" target="_blank">
+        <img src="icon/13.png"/>
+        <span class="back">我的</span>
+    </a>
+    <a href="#" class="elevator-msg" target="_blank">
+        <img src="icon/14.png"/>
+        <span class="back">购物车</span>
+    </a>
+    <a href="#" target="_blank" class="elevator-msg" >
+        <img src="icon/15.png"/>
+        <span class="back">收藏</span>
+    </a>
+    <a href="javascript:void(0)" class="elevator-msg " id="js-elevator-weixin" >
+        <img src="icon/16.png"/>
+        <div class="elevator-weixin-box">
+        	<img src="mobile/footer-qrcode.png"/>
+        </div>
+        <span class="back">扫描二维码</span>
+    </a>
+    <a href="javascript:void(0)" class="elevator-top elevator-msg"  id="backTop">
+        <img src="icon/17.png"/>
+        <span class="back">返回顶部</span>
+    </a>
+</div>
+
+  </body>
+ </html>
+
+
+
+
